@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBA-NSFW-VAULT 2090</title>
+    <style>
+        body { background: #000; color: #ff0055; font-family: 'Courier New', monospace; text-align: center; margin: 0; padding: 20px; }
+        .header { border-bottom: 2px solid #ff0055; padding-bottom: 10px; margin-bottom: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .img-card { background: #111; border: 1px solid #333; border-radius: 10px; overflow: hidden; position: relative; }
+        .img-card:hover { border-color: #ff0055; box-shadow: 0 0 20px #ff0055; }
+        img { width: 100%; height: 400px; object-fit: cover; cursor: pointer; }
+        .btn-refresh { background: #ff0055; color: white; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; border-radius: 5px; margin-bottom: 20px; font-size: 16px; }
+        .warning { color: yellow; font-size: 12px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🔞 AMBA NSFW PRIVATE 🔞</h1>
+    <p class="warning">DANGER: KONTEN 18+ | UNIT TERAKHIR 2090</p>
+</div>
+
+<button class="btn-refresh" onclick="location.reload()">COCOK? KLIK BUAT GANTI GAMBAR</button>
+
+<div class="gallery">
+    <div class="img-card">
+        <img src="https://perchance.org/get-image?generator=ai-nsfw-generator&seed=${Math.random()}" alt="NSFW_AMBA_1">
+    </div>
+    <div class="img-card">
+        <img src="https://image.pollinations.ai/prompt/nsfw%20highly%20detailed%20uncensored%20sexy%20girl?nologo=true&seed=${Math.floor(Math.random()*1000)}" alt="NSFW_AMBA_2">
+    </div>
+    <div class="img-card">
+        <img src="https://api.waifu.pics/nsfw/waifu" alt="NSFW_AMBA_3" id="waifuImg">
+    </div>
+</div>
+
+<script>
+    // Script buat narik API NSFW secara dinamis
+    fetch('https://api.waifu.pics/nsfw/waifu')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('waifuImg').src = data.url;
+        });
+</script>
+
+<p style="margin-top: 50px; color: #444; font-size: 10px;">Ngawi Connection Established - No Censorship Module Active</p>
+
+</body>
+</html>
